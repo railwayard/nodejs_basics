@@ -1,0 +1,22 @@
+// Import the http module
+const http = require("http");
+
+// Create a server
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/plain");
+    res.end("Welcome to the Node.js Tutorial");
+});
+
+
+// Listen on port 3000
+server.listen(3000, () => {
+    console.log(
+        "Server is running on http://localhost:3000");
+});
+
+//It will start a server, and when you visit http://localhost:3000, it will display
+
+// The http module is imported to create a basic HTTP server.
+// The createServer() method is used to handle incoming requests and send responses.
+// The server listens on port 3000, and a message is displayed in the browser when accessed.

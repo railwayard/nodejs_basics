@@ -1,0 +1,37 @@
+The HTML form is normally used to submit the data to the server, with its method parameter set to POST,especially when some binary data such as images is to be submitted. 
+So, let us change the method parameter in index.html to POST, and action parameter to "process_POST".
+
+{% comment %} <html>
+   <body>
+      
+      <form action = "/process_POST" method = "POST">
+         First Name: <input type = "text" name = "first_name">  <br>
+         Last Name: <input type = "text" name = "last_name">  <br>
+         <input type = "submit" value = "Submit">
+      </form>
+      
+   </body>
+</html> {% endcomment %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+</head>
+<body>
+  <h2>Submit Form (POST)</h2>
+  <form action="/process_post" method="POST">
+    First Name: <input type="text" name="first_name"><br>
+    Last Name: <input type="text" name="last_name"><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Submit Form (GET)</h2>
+  <form action="/process_get" method="GET">
+    First Name: <input type="text" name="first_name"><br>
+    Last Name: <input type="text" name="last_name"><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
