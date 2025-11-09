@@ -1,0 +1,35 @@
+// Connecting to MongoDB
+// Now we can establish connection with MongoDB server. First, import the MongoClient class from the mongodb module with the require() statement. 
+// Call its connect() method by passing the MongoDB server URL.
+
+
+const { MongoClient } = require('mongodb');
+
+// Connection URL
+const url = 'mongodb://localhost:27017';
+const client = new MongoClient(url);
+
+// Database Name
+const dbName = 'myProject';
+
+async function main() {
+   // Use connect method to connect to the server
+   await client.connect();
+   console.log('Connected successfully to server');
+   const db = client.db(dbName);
+   const collection = db.collection('documents');
+
+   // the following code examples can be pasted here...
+
+   return 'done.';
+}
+
+main()
+.then(console.log)
+.catch(console.error)
+.finally(() => client.close());
+
+
+// result: sanjana@SANJANAs-MacBook-Air mongoproj % node db.js                               
+// Connected successfully to server
+// done.
